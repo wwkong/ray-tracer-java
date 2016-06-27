@@ -11,7 +11,6 @@ public class Screen extends JPanel {
 	
 	// Initialize
 	private BufferedImage bi;
-	private Graphics2D g;
 	private int w=640;
 	private int h=480;
 	
@@ -21,7 +20,6 @@ public class Screen extends JPanel {
 		Scene rs;
 		w = ww; h = hh;
 		bi = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
-		g = bi.createGraphics();
 		rs = new Scene();
 		// Add light sources
 		rs.addObject(new Sphere(1.0, new Vec3(4,10,7),     new Vec3(1),     new Vec3(1)));
