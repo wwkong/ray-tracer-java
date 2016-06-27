@@ -58,11 +58,11 @@ public class Sphere extends Object {
 		// Helper qualities
 		Vec3 v,xc;
 		double dpVXC,dXC2,dXD2,dPD2;
-		v  = primRay.normalize(); 	
-		xc = c.subtract(camera); 	
+		v  = primRay.normalize();
+		xc = c.subtract(camera);
 		dpVXC = v.dotProduct(xc); // Check if we are shooting at the sphere or away from it
-		dXC2 = Math.pow(xc.norm(),2); 			
-		dXD2 = Math.pow(dpVXC,2);  
+		dXC2 = Math.pow(xc.norm(),2);
+		dXD2 = Math.pow(dpVXC,2);
 		dPD2 =  Math.pow(r, 2) - dXC2 + dXD2; 
 		Vec3 P = camera.add(v.scale(Math.sqrt(dXD2)-Math.sqrt(dPD2)));
 		

@@ -37,7 +37,7 @@ public class Screen extends JPanel {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 	}
 	
 	public void paint(Graphics g) {

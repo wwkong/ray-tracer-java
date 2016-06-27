@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class Scene {
-		
+	
 	// Constants
 	private int maxDepth = 3;
 	// Simple constructors
@@ -82,7 +82,7 @@ public class Scene {
 					closestP = intersection;
 					normalClosestP = object.normal(closestP);
 				}
-			} 
+			}
 		} // End main object loop
 		
 		// --------------------
@@ -104,7 +104,7 @@ public class Scene {
 			// ----------
 			// Reflection
 			if (object.isReflective()) {
-				Vec3 scaledNCP = normalClosestP.scale(camera.subtract(closestP).dotProduct(normalClosestP));								
+				Vec3 scaledNCP = normalClosestP.scale(camera.subtract(closestP).dotProduct(normalClosestP));
 				Vec3 reflPoint = camera.add(scaledNCP.subtract(camera).scale(2));
 				Vec3 reflDirection = reflPoint.subtract(closestP).normalize();
 				reflection = trace(closestP.add(normalClosestP.scale(bias)), reflDirection, bi, w, h, depth+1);
@@ -124,7 +124,7 @@ public class Scene {
 					etat = object.getRefractionIndex();
 					cosi = -cosi;
 					sgnNormal = normalClosestP;
-				} 
+				}
 				// Inside of the object
 				else { 
 					etat = object.getRefractionIndex();
@@ -158,17 +158,17 @@ public class Scene {
 					}
 					
 				}
-			}			
+			}
 			
 			// -------------------------------
 			// Combine with the Fresnel effect
 			scVec = reflection.scale(kr).add(refraction.scale((1-kr)*object.getTransparency()));
 			scVec = scVec.multiply(object.getSurfaceColor());
 			
-		} 
+		}
 		// ===============
 		// Diffuse objects
-		else {				
+		else {
 			
 			// Find the light sources
 			for (int i=0; i<objects.size(); i++) {
@@ -179,7 +179,7 @@ public class Scene {
 					// Compute the interaction
 					Sphere light = (Sphere) objects.get(i);
 					Vec3 lightDirection = light.getCenter().subtract(closestP).normalize();
-					double intensity    = lightDirection.dotProduct(normalClosestP);		
+					double intensity    = lightDirection.dotProduct(normalClosestP);
 					
 					// Check if we are in the shadow of another object
 					for (int k=0; k<objects.size(); k++) {
@@ -189,7 +189,7 @@ public class Scene {
 							inShadow = true;
 							break;
 						}
-					}		
+					}
 					
 					// Compute the color of the pixel based on all of the info
 					if (intensity > 0 && !inShadow) {
@@ -197,7 +197,7 @@ public class Scene {
 						double lsConst = (1-ambientLight)*intensity*light.getEmissionColor().getX();
 						scVec = object.getSurfaceColor().scale(lsConst);
 						// Add ambient light
-						scVec = scVec.add(new Vec3(ambientLight));									
+						scVec = scVec.add(new Vec3(ambientLight));
 					} else {
 						// Add ambient light
 						scVec = new Vec3(ambientLight);
@@ -208,7 +208,7 @@ public class Scene {
 			
 		// =======================
 		// End diffuse object case
-		} 
+		}
 		
 		// Return the RGB color vector
 		return scVec;

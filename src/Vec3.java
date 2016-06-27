@@ -15,22 +15,22 @@ public class Vec3 {
 	
 	// Access functions and update functions
 	public double getX() {
-		return x;	
+		return x;
 	}
 	public double getY() {
-		return y;	
+		return y;
 	}
 	public double getZ() {
-		return z;	
+		return z;
 	}
 	public void setX(double xx) {
-		x=xx;	
+		x=xx;
 	}
 	public void setY(double yy) {
-		y=yy;	
+		y=yy;
 	}
 	public void setZ(double zz) {
-		z=zz;	
+		z=zz;
 	}
 	public void print() {
 		System.out.println("x=" + x + " y=" + y + " z=" + z);
@@ -38,25 +38,25 @@ public class Vec3 {
 	
 	// Linear algebra functions
 	public double dotProduct(Vec3 vec) {
-		return (x*vec.getX() + y*vec.getY() + z*vec.getZ());			
+		return (x*vec.getX() + y*vec.getY() + z*vec.getZ());
 	}
 	public double norm() {
 		return Math.sqrt(x*x + y*y + z*z);
 	}
 	public Vec3 add(Vec3 vec) {
-		return new Vec3(x+vec.getX(), y+vec.getY(), z+vec.getZ());			
+		return new Vec3(x+vec.getX(), y+vec.getY(), z+vec.getZ());
 	}
 	public Vec3 subtract(Vec3 vec) {
-		return new Vec3(x-vec.getX(), y-vec.getY(), z-vec.getZ());		
+		return new Vec3(x-vec.getX(), y-vec.getY(), z-vec.getZ());
 	}
 	public Vec3 multiply(Vec3 vec) {
-		return new Vec3(x*vec.getX(), y*vec.getY(), z*vec.getZ());		
+		return new Vec3(x*vec.getX(), y*vec.getY(), z*vec.getZ());
 	}
 	public Vec3 scale(double c) {
 		return new Vec3(x*c, y*c, z*c);
 	}
 	public Vec3 negate() {
-		return scale(-1);			
+		return scale(-1);
 	}
 	public Vec3 normalize() {
 		return scale(1/norm());
