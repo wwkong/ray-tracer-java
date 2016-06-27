@@ -219,9 +219,9 @@ public class Scene {
 		
 		// Helper variables
 		Vec3 primRay = new Vec3();
-		double imgWidth = (float) bi.getWidth();
-		double imgHeight = (float) bi.getHeight(); 
-		double aspectRatio = (float) bi.getWidth()/bi.getHeight();
+		double imgWidth = bi.getWidth();
+		double imgHeight = bi.getHeight();
+		double aspectRatio = imgWidth / imgHeight;
 		double qHeight = Math.tan(Math.PI * 0.5 * fov / 180);
 		
 		// Iterate over the pixels
@@ -229,8 +229,8 @@ public class Scene {
 			for (int h=0; h<imgHeight; h++) {
 				
 				// The camera will shoot in the +z direction with the image plane situated at (x,y,1)
-				primRay.setX(2 * qHeight * aspectRatio * ((((float) w+1)/imgWidth)-0.5));
-				primRay.setY(2 * qHeight * (0.5-(((float) h+1)/imgHeight)));
+				primRay.setX(2 * qHeight * aspectRatio * ((((double) w+1)/imgWidth)-0.5));
+				primRay.setY(2 * qHeight * (0.5-(((double) h+1)/imgHeight)));
 				primRay.setZ(1);
 				
 				// Trace an object if it intersects with out primary ray
