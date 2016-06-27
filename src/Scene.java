@@ -14,17 +14,17 @@ public class Scene {
 	public Scene() {
 		fov	   = 30;
 		ambientLight = 0.2;
-		objects = new ArrayList<Object>();
+		objects = new ArrayList<>();
 	}
 	public Scene(double f) {
 		fov	   = f;
 		ambientLight = 0.2;
-		objects = new ArrayList<Object>();
+		objects = new ArrayList<>();
 	}
 	public Scene(double f, double l) {
 		fov	   = f;
 		ambientLight = l;
-		objects = new ArrayList<Object>();
+		objects = new ArrayList<>();
 	}
 	public Scene(double f, double l, ArrayList<Object> o) {
 		fov    = f;
