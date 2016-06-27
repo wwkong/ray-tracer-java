@@ -62,9 +62,6 @@ public class Vec3 {
 		return scale(1/norm());
 	}
 	public double dist(Vec3 vec) {
-		Vec3 dirVec = subtract(vec);
-		return Math.sqrt(Math.pow(dirVec.getX(),2) + 
-					  	 Math.pow(dirVec.getY(),2) + 
-						 Math.pow(dirVec.getZ(),2));
+		return subtract(vec).norm();
 	}
 }
