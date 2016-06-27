@@ -96,14 +96,14 @@ public class Scene {
 		
 		// ================================
 		// Reflective or refractive objects
-		else if ((object.getReflective() || object.getTransparency() > 0) && depth < maxDepth) {
+		else if ((object.isReflective() || object.getTransparency() > 0) && depth < maxDepth) {
 			// Initialize
 			Vec3 reflection = new Vec3(0);
 			Vec3 refraction = new Vec3(0);
 			double kr = 1;
 			// ----------
 			// Reflection
-			if (object.getReflective()) {
+			if (object.isReflective()) {
 				Vec3 scaledNCP = normalClosestP.scale(camera.subtract(closestP).dotProduct(normalClosestP));								
 				Vec3 reflPoint = camera.add(scaledNCP.subtract(camera).scale(2));
 				Vec3 reflDirection = reflPoint.subtract(closestP).normalize();

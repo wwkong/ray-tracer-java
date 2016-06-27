@@ -29,7 +29,7 @@ public class Object {
 	public Vec3 getEmissionColor() {
 		return emissionColor;
 	}
-	public boolean getReflective() {
+	public boolean isReflective() {
 		return reflective;
 	}
 	public double getTransparency() {
