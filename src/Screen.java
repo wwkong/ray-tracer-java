@@ -11,8 +11,8 @@ public class Screen extends JPanel {
 	
 	// Initialize
 	private BufferedImage bi;
-	private int w=640;
-	private int h=480;
+	private int w;
+	private int h;
 	
 	// For image processing
 	public Screen(int ww, int hh) {
