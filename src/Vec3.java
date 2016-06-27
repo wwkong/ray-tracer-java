@@ -38,19 +38,19 @@ public class Vec3 {
 	
 	// Linear algebra functions
 	public double dotProduct(Vec3 vec) {
-		return (x*vec.getX() + y*vec.getY() + z*vec.getZ());
+		return (x*vec.x + y*vec.y + z*vec.z);
 	}
 	public double norm() {
 		return Math.sqrt(x*x + y*y + z*z);
 	}
 	public Vec3 add(Vec3 vec) {
-		return new Vec3(x+vec.getX(), y+vec.getY(), z+vec.getZ());
+		return new Vec3(x+vec.x, y+vec.y, z+vec.z);
 	}
 	public Vec3 subtract(Vec3 vec) {
-		return new Vec3(x-vec.getX(), y-vec.getY(), z-vec.getZ());
+		return new Vec3(x-vec.x, y-vec.y, z-vec.z);
 	}
 	public Vec3 multiply(Vec3 vec) {
-		return new Vec3(x*vec.getX(), y*vec.getY(), z*vec.getZ());
+		return new Vec3(x*vec.x, y*vec.y, z*vec.z);
 	}
 	public Vec3 scale(double c) {
 		return new Vec3(x*c, y*c, z*c);
