@@ -12,19 +12,13 @@ public class Scene {
 	private ArrayList<Object> objects;
 	// Camera will start at (0,0,0)
 	public Scene() {
-		fov	   = 30;
-		ambientLight = 0.2;
-		objects = new ArrayList<>();
+		this(30);
 	}
 	public Scene(double f) {
-		fov	   = f;
-		ambientLight = 0.2;
-		objects = new ArrayList<>();
+		this(f, 0.2);
 	}
 	public Scene(double f, double l) {
-		fov	   = f;
-		ambientLight = l;
-		objects = new ArrayList<>();
+		this(f, l, new ArrayList<Object>());
 	}
 	public Scene(double f, double l, ArrayList<Object> o) {
 		fov    = f;

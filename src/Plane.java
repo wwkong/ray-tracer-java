@@ -4,8 +4,7 @@ public class Plane extends Object {
 	private Vec3 p0; // Point on the plane
 	private Vec3 n; // Normal
 	public Plane() {
-		super();
-		p0=new Vec3(0,-1,0); n= new Vec3(0,1,0);
+		this(new Vec3(0,-1,0), new Vec3(0,1,0));
 	}
 	public Plane(Vec3 pp, Vec3 nn) {
 		super();

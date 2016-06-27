@@ -4,10 +4,10 @@ public class Vec3 {
 	// Simple constructors
 	private double x, y, z;
 	public Vec3() {
-		x=0; y=0; z=0;
+		this(0);
 	}
 	public Vec3(double xx) {
-		x=xx; y=xx; z=xx;
+		this(xx, xx, xx);
 	}
 	public Vec3(double xx, double yy, double zz) {
 		x=xx;y=yy;z=zz;

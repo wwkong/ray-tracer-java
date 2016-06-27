@@ -4,12 +4,10 @@ public class Sphere extends Object {
 	private double r; // Radius
 	private Vec3 c; // Center
 	public Sphere() {
-		super();
-		r=1; c= new Vec3(0,0,0);
+		this(1);
 	}
 	public Sphere(double rr) {
-		super();
-		r=rr; c= new Vec3(0,0,0);
+		this(rr, new Vec3(0,0,0));
 	}
 	public Sphere(double rr, Vec3 cc) {
 		super();
